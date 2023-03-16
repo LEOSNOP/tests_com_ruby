@@ -17,7 +17,7 @@ Funcionalidade: Busca de produtos
     Exemplos: lista de busca de produtos validos
     |produto_valido |
     |"Xbox series s"|
-    |"jbl bombox"   |
+    |"jbl boombox"   |
     |"rtx 3060"     |
     
     @caminho2
