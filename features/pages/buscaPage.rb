@@ -1,5 +1,5 @@
 class BuscaPage < SitePrism::Page
-    set_url ''
+    set_url 'https://americanas.com.br'
     
     element :barra_pesquisa , 'input[aria-label="Pesquisar"]'
 

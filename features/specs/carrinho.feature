@@ -3,12 +3,12 @@
 @carrinho_de_compras
 Funcionalidade: Adicionando ao carrinho
 
-    como um usuario quero acessar a Americanas
+    como um usuario quero acessar a Magazine Luiza
     fazer a busca por um produto 
     e adicionar o produto ao carrinho
 
-     Contexto: entrando na amazon e fazendo a busca
-      Dado que o usuario acessa o site da Amazon
+     Contexto: entrando na Magazine e fazendo a busca
+      Dado que o usuario acessa o site da Magazine
       Quando o usuario faz a busca por "headset hyperx"
       Entao o sistema verifica o resultado da busca
 
