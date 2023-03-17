@@ -1,6 +1,3 @@
-
-
-
 Dado('que o usuario acessa a Americanas') do
   @page = BuscaPage.new
     @page.load
@@ -29,14 +26,20 @@ Dado('que o usuario acessa a Americanas') do
   end
   
   Entao('o sistema verifica o resultado do produto generico') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content('resultados para ')
+    sleep(3)
+    have_css(@page.lista_de_items)
+    sleep(2)
   end
   
   Quando('o usuario faz uma busca {string}') do |vazio|
-    pending # Write code here that turns the phrase above into concrete actions
+    @page.prencher(vazio)
+    sleep(1)
+    @page.pesquisar
+    sleep(5)
   end
   
   Entao('o sistema permanece na pagina') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content('americanas')
   end
   
