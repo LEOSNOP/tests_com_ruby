@@ -36,22 +36,45 @@ Dado('que o usuario acessa o site da Magazine') do
   end
   
   Dado('que o usuario adiciona o produto ao carrinho') do
-    pending # Write code here that turns the phrase above into concrete actions
+    @page.click_no_item_de_selecao
+    sleep(3)
+    have_css('h1[data-testid*="heading-product"]')
+    sleep(3)
+    @page.adicionando_ao_carrinho
+    sleep(2)
+    have_css('div[class="BasketPage-title"]')
+    sleep(2)
+    have_css('div[class="BasketTable"]')
+    sleep(2)
   end
-  
+
   Quando('o usuario excluir o produto do carrinho') do
-    pending # Write code here that turns the phrase above into concrete actions
+    @page.excluindo_do_carrinho
+    sleep(2)
   end
   
   Entao('o sistema verifica se o produto foi tirado do carrinho') do
-    pending # Write code here that turns the phrase above into concrete actions
+    have_css('div[class="BasketPage-title"]')
+    sleep(2)
+    have_css(@page.mensagem_sacola_vazia)
+    sleep(2)
+    expect(page).to have_content('Sua sacola está vazia')
+    sleep(2)
   end
   
   Quando('o usuario visualisa o produto e nao adiciona ao carrinho') do
-    pending # Write code here that turns the phrase above into concrete actions
+    have_css('h1[data-testid*="heading-product"]')
+    sleep(2)
+    @page.click_carrinho_de_compras
+    sleep(2)
   end
   
   Entao('o sistema verifica se algo foi adicionado ao carrinho') do
-    pending # Write code here that turns the phrase above into concrete actions
+    have_css('div[class="BasketPage-title"]')
+    sleep(2)
+    have_css(@page.mensagem_sacola_vazia)
+    sleep(2)
+    expect(page).to have_content('Sua sacola está vazia')
+    sleep(2)
   end
   

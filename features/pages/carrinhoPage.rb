@@ -11,6 +11,12 @@ class CarrinhoPage < SitePrism::Page
 
     element :botao_add_carrinho, '#__next > div > main > section:nth-child(7) > div.sc-jrcTuL.kQzMUn > div:nth-child(2) > button'
 
+    element :botao_exclui_carrinho, 'button[class="BasketItemProduct-quantity-remove"]'
+
+    element :mensagem_sacola_vazia, 'div[class="EmptyBasket-title"]'
+
+    element :click_sacola , 'a[data-testid="bag-button-container"]'
+
     def prencher (pesquisa)
         barra_pesquisa.set pesquisa
     end
@@ -25,6 +31,14 @@ class CarrinhoPage < SitePrism::Page
 
     def adicionando_ao_carrinho
         botao_add_carrinho.click
+    end
+
+    def excluindo_do_carrinho
+        botao_exclui_carrinho.click
+    end
+    
+    def click_carrinho_de_compras
+        click_sacola.click
     end
 
 end
