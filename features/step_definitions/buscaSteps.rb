@@ -23,14 +23,16 @@ Dado('que o usuario acessa a Americanas') do
   end
   
   Entao('o sistema verifica o resultado invalido') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content('poxa, nenhum resultado encontrado para ')
+    sleep(3)
+    expect(page).to have_content('Que tal pesquisar de novo seguindo as dicas abaixo? ;)')
   end
   
   Entao('o sistema verifica o resultado do produto generico') do
     pending # Write code here that turns the phrase above into concrete actions
   end
   
-  Quando('o usuario faz uma busca {string}') do |string|
+  Quando('o usuario faz uma busca {string}') do |vazio|
     pending # Write code here that turns the phrase above into concrete actions
   end
   
