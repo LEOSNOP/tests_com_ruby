@@ -2,6 +2,9 @@ require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
 require 'rspec'
+require_relative 'helper.rb'
+
+World(PageObjects)
 
 Capybara.configure do |config|
   #selenium   selenium_chrome  selenium_chrome_headless
